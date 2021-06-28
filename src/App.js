@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import styleApp from './App.module.css';
+import { useSelector, useDispatch } from 'react-redux'
+import { lightBulb, turnOffBulb } from  './redux/actions'
 
 function App() {
+  const bulbState = useSelector(state => state.bulbState)
+  const dispatch = useDispatch()
+
+  const handleClick = () => {
+    bulbState === 'OFF' ? dispatch(lightBulb()) : dispatch(turnOffBulb())
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styleApp.App}>
+        <h1>{ bulbState }</h1>
+        <div className=
+        {
+          `${styleApp.bulb} ${bulbState === 'ON'? styleApp.bulbOn : styleApp.bulbOff}`
+        }
+      >
+      </div>
+      <button onClick={handleClick}>ON/OFF</button>
     </div>
   );
 }

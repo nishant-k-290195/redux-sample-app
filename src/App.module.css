@@ -1,0 +1,33 @@
+h1{
+  color: white;
+}
+.App {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: max-content;
+  height: 20rem;
+  width: 20rem;
+  margin: auto;
+  margin-top: 16rem;
+  background-color: black;
+}
+
+.bulb{
+  height: 4rem;
+  width: 2rem;
+  margin: auto;
+  border: 1px solid rgba(0, 0, 0, 0.822);
+  border-radius: 10%;
+  background-color: rgb(124, 124, 124);
+}
+
+.bulbOn{
+  color: yellow;
+  background: yellow;
+}
+
+.bulbOff{
+  color: rgba(0, 0, 0, 0.445);
+  background-color: rgb(124, 124, 124);
+}
